@@ -56,7 +56,7 @@ public class MainActivity extends ActionBarActivity {
         Clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Text.getText().equals("") || Text.getText().equals(null)){
+                if(Text.getText().toString().equals("")){
                     Text.setText("");
                 }else{
                    String c = Text.getText().toString();
@@ -128,7 +128,8 @@ public class MainActivity extends ActionBarActivity {
                                 switch (v.getId()) {
 
                                     case R.id.bt0:
-                                        Text.setText(val+"0");
+                                            Text.setText(val + "0");
+
 
                                         break;
                                     case R.id.bt1:
@@ -168,65 +169,94 @@ public class MainActivity extends ActionBarActivity {
                                         Text.setText(val+"9");
                                         break;
                                     case R.id.btigual:
-                                        numero[1] = Double.parseDouble(val);
-                                        if(sum == true)
-                                        {     result = numero[0] + numero[1];
-                                              Text.setText(String.valueOf(result));
+                                        if(Text.getText().toString().equals(""))
+                                        {
+                                            Text.setText("Syntax Error");
+                                            dec=false;sum=false;sub=false;mult=false;div=false;
+                                            Text.setText("");
+                                        }else {
+                                            numero[1] = Double.parseDouble(val);
 
-                                        }else{
-                                                if(sub == true){
+
+                                            if (sum == true) {
+                                                result = numero[0] + numero[1];
+                                                Text.setText(String.valueOf(result));
+
+                                            } else {
+                                                if (sub == true) {
                                                     result = numero[0] - numero[1];
                                                     Text.setText(String.valueOf(result));
 
-                                                    }else{
-                                                             if(mult == true){
-                                                                 result = numero[0] * numero[1];
-                                                                 Text.setText(String.valueOf(result));
+                                                } else {
+                                                    if (mult == true) {
+                                                        result = numero[0] * numero[1];
+                                                        Text.setText(String.valueOf(result));
 
-                                                             }else{
-                                                                 if(div == true){
-                                                                     if(numero[1] == 0){
-                                                                         Text.setText("Syntax Error");
-                                                                         div=false;
-                                                                     }else {
-                                                                         result = numero[0] / numero[1];
-                                                                         Text.setText(String.valueOf(result));
-                                                                     }
+                                                    } else {
+                                                        if (div == true) {
+                                                            if (numero[1] == 0) {
+                                                                Text.setText("Indeterminado");
+                                                                div = false;
+                                                            } else {
+                                                                result = numero[0] / numero[1];
+                                                                Text.setText(String.valueOf(result));
+                                                            }
 
-                                                                 }
-                                                             }
+                                                        }
+                                                    }
                                                 }
-                                                }
+                                            }
+                                        }
                                         dec=false;sum=false;sub=false;mult=false;div=false;
 
                                         break;
                                     case R.id.div:
                                        div = true;
-                                        numero[0] = Double.parseDouble(val);
-                                        Text.setText("");
-                                        dec = false;
+                                        if(Text.getText().toString().equals("")){
+                                            Text.setText("Syntax Error");
+                                            dec=false;sum=false;sub=false;mult=false;div=false;
+                                        }else {
+                                            numero[0] = Double.parseDouble(val);
+                                            Text.setText("");
+                                            dec = false;
+                                        }
                                         //Division
                                         break;
                                     case R.id.mult:
-                                        numero[0] = Double.parseDouble(val);
-                                        Text.setText("");
-                                        mult = true;
-                                        dec = true;
+                                        if(Text.getText().toString().equals("")){
+                                            Text.setText("Syntax Error");
+                                            dec=false;sum=false;sub=false;mult=false;div=false;
+                                        }else {
+                                            numero[0] = Double.parseDouble(val);
+                                            Text.setText("");
+                                            mult = true;
+                                            dec = true;
+                                        }
                                        //multiplicacion
 
                                         break;
                                     case R.id.sub:
-                                        sub = true;
-                                        numero[0] = Double.parseDouble(val);
-                                        Text.setText("");
-                                        dec = true;
+                                        if (Text.getText().toString().equals("")){
+                                            Text.setText("Syntax Error");
+                                            dec=false;sum=false;sub=false;mult=false;div=false;
+                                        }else {
+                                            sub = true;
+                                            numero[0] = Double.parseDouble(val);
+                                            Text.setText("");
+                                            dec = true;
+                                        }
                                         //Resta
                                         break;
                                     case R.id.plus:
-                                        sum = true;
-                                        numero[0] = Double.parseDouble(val);
-                                        Text.setText("");
-                                        dec = true;
+                                        if(Text.getText().toString().equals("")){
+                                            Text.setText("Syntax Error");
+                                            dec=false;sum=false;sub=false;mult=false;div=false;
+                                        }else {
+                                            sum = true;
+                                            numero[0] = Double.parseDouble(val);
+                                            Text.setText("");
+                                            dec = true;
+                                        }
                                         //Suma
 
                                         break;

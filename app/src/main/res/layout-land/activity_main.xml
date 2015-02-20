@@ -47,7 +47,8 @@
             android:id="@+id/clear"
             android:background="#E68A00"
             android:layout_weight="1"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:tag="op"/>
 
     </TableRow>
 
@@ -63,7 +64,7 @@
                 android:layout_weight="1"
                 android:textSize="30sp"
                 android:background="@drawable/backgroundcolor"
-
+                android:tag="Numero"
                 />
 
 
@@ -74,7 +75,8 @@
                 android:layout_weight="1"
                 android:textSize="30sp"
                 android:background="@drawable/backgroundcolor"
-                android:text="8" />
+                android:text="8"
+                android:tag="Numero"/>
 
             <Button
                 android:layout_width="0dp"
@@ -83,7 +85,8 @@
                 android:id="@+id/bt9"
                 android:layout_weight="1"
                 android:textSize="30sp"
-                android:background="@drawable/backgroundcolor" />
+                android:background="@drawable/backgroundcolor"
+                android:tag="Numero"/>
 
             <Button
                 android:layout_width="0dp"
@@ -92,7 +95,8 @@
                 android:id="@+id/plus"
                 android:layout_weight="1"
                 android:textSize="30sp"
-                android:background="@drawable/backgroundcolor2" />
+                android:background="@drawable/backgroundcolor2"
+                android:tag="op"/>
         </TableRow>
 
         <TableRow
@@ -107,7 +111,8 @@
                 android:id="@+id/bt4"
                 android:layout_weight="1"
                 android:textSize="30sp"
-                android:background="@drawable/backgroundcolor" />
+                android:background="@drawable/backgroundcolor"
+                android:tag="Numero"/>
 
             <Button
                 android:layout_width="0dp"
@@ -116,7 +121,8 @@
                 android:id="@+id/bt5"
                 android:layout_weight="1"
                 android:textSize="30sp"
-                android:background="@drawable/backgroundcolor" />
+                android:background="@drawable/backgroundcolor"
+                android:tag="Numero"/>
 
             <Button
                 android:layout_width="0dp"
@@ -125,7 +131,8 @@
                 android:id="@+id/bt6"
                 android:layout_weight="1"
                 android:textSize="30sp"
-                android:background="@drawable/backgroundcolor" />
+                android:background="@drawable/backgroundcolor"
+                android:tag="Numero"/>
 
             <Button
                 android:layout_width="0dp"
@@ -134,7 +141,8 @@
                 android:id="@+id/sub"
                 android:layout_weight="1"
                 android:textSize="30sp"
-                android:background="@drawable/backgroundcolor2" />
+                android:background="@drawable/backgroundcolor2"
+                android:tag="op"/>
         </TableRow>
 
         <TableRow
@@ -149,7 +157,8 @@
                 android:id="@+id/bt1"
                 android:layout_weight="1"
                 android:textSize="30sp"
-                android:background="@drawable/backgroundcolor" />
+                android:background="@drawable/backgroundcolor"
+                android:tag="Numero"/>
 
             <Button
                 android:layout_width="0dp"
@@ -158,7 +167,8 @@
                 android:id="@+id/bt2"
                 android:layout_weight="1"
                 android:textSize="30sp"
-                android:background="@drawable/backgroundcolor" />
+                android:background="@drawable/backgroundcolor"
+                android:tag="Numero"/>
 
             <Button
                 android:layout_width="0dp"
@@ -167,7 +177,8 @@
                 android:id="@+id/bt3"
                 android:layout_weight="1"
                 android:textSize="30sp"
-                android:background="@drawable/backgroundcolor" />
+                android:background="@drawable/backgroundcolor"
+                android:tag="Numero"/>
 
             <Button
                 android:layout_width="0dp"
@@ -176,7 +187,8 @@
                 android:id="@+id/mult"
                 android:layout_weight="1"
                 android:textSize="30sp"
-                android:background="@drawable/backgroundcolor2" />
+                android:background="@drawable/backgroundcolor2"
+                android:tag="op"/>
         </TableRow>
 
         <TableRow
@@ -191,7 +203,8 @@
                 android:id="@+id/point"
                 android:layout_weight="1"
                 android:textSize="20sp"
-                android:background="@drawable/backgroundcolor2" />
+                android:background="@drawable/backgroundcolor2"
+                android:tag="op"/>
 
             <Button
                 android:layout_width="0dp"
@@ -200,7 +213,8 @@
                 android:id="@+id/bt0"
                 android:layout_weight="1"
                 android:textSize="20sp"
-                android:background="@drawable/backgroundcolor" />
+                android:background="@drawable/backgroundcolor"
+                android:tag="Numero"/>
 
             <Button
                 android:layout_width="0dp"
@@ -209,7 +223,8 @@
                 android:id="@+id/btigual"
                 android:layout_weight="1"
                 android:textSize="20sp"
-                android:background="@drawable/backgroundcolor2" />
+                android:background="@drawable/backgroundcolor2"
+                android:tag="op"/>
 
             <Button
                 android:layout_width="0dp"
@@ -218,7 +233,8 @@
                 android:id="@+id/div"
                 android:layout_weight="1"
                 android:textSize="20sp"
-                android:background="@drawable/backgroundcolor2" />
+                android:background="@drawable/backgroundcolor2"
+                android:tag="Numero"/>
         </TableRow>
 
 

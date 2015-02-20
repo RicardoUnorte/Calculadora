@@ -12,6 +12,8 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -22,15 +24,32 @@ public class MainActivity extends ActionBarActivity {
     boolean mult = false;
     Double[] numero = new Double[20];
     Double result = 0.0;
+    private static final String KEY_TEXT_VALUE = "textValue";
     int l=0;
+
+    @Override
+    protected void onSaveInstanceState (Bundle outState) {
+        super.onSaveInstanceState(outState);
+        TextView Text2 = (TextView) findViewById(R.id.OutputNum);
+        outState.putString(KEY_TEXT_VALUE, String.valueOf(Text2.getText()));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         TableLayout T = (TableLayout) this.findViewById(R.id.but);
 
        final TextView Text = (TextView) findViewById(R.id.OutputNum);
+
+        if(savedInstanceState !=null)
+        {
+            String ST = savedInstanceState.getString(KEY_TEXT_VALUE);
+            Text.setText(ST);
+        }
+
 
         Button Clear = (Button) findViewById(R.id.clear);
 
@@ -166,8 +185,13 @@ public class MainActivity extends ActionBarActivity {
 
                                                              }else{
                                                                  if(div == true){
-                                                                     result = numero[0] / numero[1];
-                                                                     Text.setText(String.valueOf(result));
+                                                                     if(numero[1] == 0){
+                                                                         Text.setText("Syntax Error");
+                                                                         div=false;
+                                                                     }else {
+                                                                         result = numero[0] / numero[1];
+                                                                         Text.setText(String.valueOf(result));
+                                                                     }
 
                                                                  }
                                                              }
@@ -233,6 +257,9 @@ public class MainActivity extends ActionBarActivity {
 
 
     }
+
+
+
 
 
     @Override
